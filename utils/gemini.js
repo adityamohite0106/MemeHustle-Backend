@@ -20,7 +20,7 @@ async function generateCaption(tags = []) {
     cache[tagKey] = { ...cache[tagKey], caption };
     return caption;
   } catch (err) {
-    console.error("Caption generation failed:", err.message);
+    // console.error("Caption generation failed:", err.message);
     return "YOLO to the moon!"; // Fallback
   }
 }
@@ -38,7 +38,7 @@ async function generateVibe(tags = []) {
     cache[tagKey] = { ...cache[tagKey], vibe };
     return vibe;
   } catch (err) {
-    console.error("Vibe generation failed:", err.message);
+    // console.error("Vibe generation failed:", err.message);
     return "Retro Stonks Vibes"; // Fallback
   }
 }

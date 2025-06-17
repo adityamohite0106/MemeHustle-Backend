@@ -45,7 +45,7 @@ router.post('/caption', async (req, res) => {
     cache[tagStr] = caption;
     res.json({ caption });
   } catch (err) {
-    console.warn('Gemini caption fallback due to error:', err.message);
+    // console.warn('Gemini caption fallback due to error:', err.message);
     res.json({ caption: getRandom(fallbackCaptions) });
   }
 });
@@ -63,7 +63,7 @@ router.post('/vibe', async (req, res) => {
     const vibe = response.data.candidates?.[0]?.content?.parts?.[0]?.text || getRandom(fallbackVibes);
     res.json({ vibe });
   } catch (err) {
-    console.warn('Gemini vibe fallback due to error:', err.message);
+    // console.warn('Gemini vibe fallback due to error:', err.message);
     res.json({ vibe: getRandom(fallbackVibes) });
   }
 });

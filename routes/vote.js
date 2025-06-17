@@ -42,7 +42,7 @@ module.exports = (io) => {
         updatedVoteCount, // ✅ Send to frontend
       });
     } catch (err) {
-      console.error("Vote error:", err);
+      // console.error("Vote error:", err);
       res.status(500).json({ error: 'Failed to cast vote' });
     }
   });

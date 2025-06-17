@@ -70,12 +70,12 @@ module.exports = (io) => {
         vibeRes.data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ||
         getRandom(fallbackVibes);
 
-      console.log('🎯 Gemini Caption:', caption);
-      console.log('🎯 Gemini Vibe:', vibe);
+      // console.log('🎯 Gemini Caption:', caption);
+      // console.log('🎯 Gemini Vibe:', vibe);
 
       return { caption, vibe };
     } catch (err) {
-      console.warn('⚠️ Gemini API failed:', err.message);
+      // console.warn('⚠️ Gemini API failed:', err.message);
       return {
         caption: getRandom(fallbackCaptions),
         vibe: getRandom(fallbackVibes)
@@ -99,7 +99,7 @@ module.exports = (io) => {
       io.emit('new-meme', savedMeme);
       res.status(201).json(savedMeme);
     } catch (err) {
-      console.error('❌ Meme creation failed:', err.message);
+      // console.error('❌ Meme creation failed:', err.message);
       res.status(500).json({ error: 'Failed to create meme' });
     }
   });
@@ -110,7 +110,7 @@ module.exports = (io) => {
       const memes = await Meme.find().sort({ createdAt: -1 });
       res.json(memes);
     } catch (err) {
-      console.error('❌ Fetch memes failed:', err.message);
+      // console.error('❌ Fetch memes failed:', err.message);
       res.status(500).json({ error: 'Failed to fetch memes' });
     }
   });
